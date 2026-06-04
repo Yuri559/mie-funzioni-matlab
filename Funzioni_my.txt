@@ -1,0 +1,3 @@
+tetametodo_my → Risolve il problema di Cauchy (anche sistemi di EDO del 1° ordine) col Teta-Metodo, usando iterazioni di punto fisso integrate. cambiando teta può diventare EI,EA,C-N
+
+gausscomp_my → Implementa la formula di quadratura di Gauss-Legendre composita a n punti (= ordine n) con n = 0, 1, 2, 3
