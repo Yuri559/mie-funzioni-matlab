@@ -1,0 +1,16 @@
+git add -A
+git commit -m "rimossi file cancellati in locale"
+git push
+
+git pull
+
+---
+
+git fetch
+
+---
+🔀 Differenze utili da sapere:
+
+git add -A → tutto, ovunque nel repo (anche cartelle diverse da dove sei) 🌍
+git add . → tutto, ma solo dalla cartella attuale in giù 📂
+git add nomefile → solo quel file specifico 🎯
