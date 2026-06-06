@@ -1,4 +1,4 @@
-function [x, resrel, errstim, K] = solve_lineare_my(A, b, metodo)
+function [x, resrel, errstim, K, y] = solve_lineare_my(A, b, metodo)
 %
 % [x, resrel, errstim, K] = solve_lineare_my(A, b, metodo)
 %
