@@ -1,9 +1,9 @@
-function Pe = peclet_globale_my(beta, alfa, L)
+function Pe = peclet_globale_my(eta, mu, L)
 %
-%   Pe = peclet_globale_my(beta, alfa, L)
+%   Pe = peclet_globale_my(eta, mu, L)
 %
 % Calcola il numero di Peclet GLOBALE per un problema di
-% diffusione-trasporto:  -alfa*u'' + beta*u' + gamma*u = f
+% diffusione-trasporto:  -mu*u'' + eta*u' + sigma*u = f
 %
 % INPUT:
 %   beta : coefficiente del trasporto (modulo)
@@ -14,6 +14,6 @@ function Pe = peclet_globale_my(beta, alfa, L)
 %   Pe   : numero di Peclet globale
 %          Pe > 1  ->  trasporto dominante
 
-    Pe = abs(beta) * L / (2 * alfa);
+    Pe = abs(eta) * L / (2 * mu);
 
 end

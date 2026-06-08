@@ -1,9 +1,9 @@
-function Pe = peclet_locale_my(beta, alfa, h)
+function Pe = peclet_locale_my(eta, mu, h)
 %
-%   Pe = peclet_locale_my(beta, alfa, h)
+%   Pe = peclet_locale_my(eta, mu, h)
 %
 % Calcola il numero di Peclet LOCALE per un problema di
-% diffusione-trasporto:  -alfa*u'' + beta*u' + gamma*u = f
+% diffusione-trasporto:  -mu*u'' + eta*u' + sigma*u = f
 %
 % INPUT:
 %   beta : coefficiente del trasporto (modulo)
@@ -15,6 +15,6 @@ function Pe = peclet_locale_my(beta, alfa, h)
 %          Pe < 1  ->  centrate stabili
 %          Pe > 1  ->  centrate oscillano: usa upwind o Scharfetter-Gummel
 
-    Pe = abs(beta) * h / (2 * alfa);
+    Pe = abs(eta) * h / (2 * mu);
 
 end
