@@ -1,17 +1,17 @@
-function [u, x] = risolvi_bvp_sg(a, b, h, mu_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
+function [u, x] = risolvi_bvp_sg_my(a, b, h, mu_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
 %
-%   function [u, x] = risolvi_bvp_sg(a, b, h, mu_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
+%   function [u, x] = risolvi_bvp_sg_my(a, b, h, mu_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
 %
 % Risolve un problema ai limiti (BVP) lineare del secondo ordine 
 % nell'intervallo [a, b] utilizzando il metodo di SCHARFETTER-GUMMEL.
 % Il modello matematico generale risolto è:
-%       -alfa(x)*u''(x) + beta(x)*u'(x) + gamma(x)*u(x) = f(x)
+%       -alpha(x)*u''(x) + beta(x)*u'(x) + gamma(x)*u(x) = f(x)
 %
 % INPUT:
 %   a, b     : Scalari. Estremi dell'intervallo di integrazione [a, b].
 %   h        : Scalare. Passo di discretizzazione spaziale (ampiezza della griglia).
-%   mu_fun   : Function handle della viscosità artificiale modificata, mu_h(x).
-%   alfa_fun : Function handle del coefficiente della derivata seconda, alfa(x).
+%   mu_fun   : Function handle della viscosità artificiale modificata, mu_h(x)
+%              mu_fun = alpha(x) * (1 * Pe_h).
 %   beta_fun : Function handle del coefficiente della derivata prima, beta(x).
 %   gamma_fun: Function handle del coefficiente del termine noto lineare, gamma(x).
 %   f_fun    : Function handle del termine sorgente/noto, f(x).

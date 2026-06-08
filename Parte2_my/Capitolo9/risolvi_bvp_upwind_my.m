@@ -1,17 +1,17 @@
-function [u, x] = risolvi_bvp_upwind(a, b, h, alfa_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
+function [u, x] = risolvi_bvp_upwind_my(a, b, h, alpha_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
 %
-%   [u, x] = risolvi_bvp_upwind(a, b, h, alfa_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
+%   [u, x] = risolvi_bvp_upwind_my(a, b, h, alpha_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
 %
 % Risolve un problema ai limiti (BVP) lineare del secondo ordine 
 % nell'intervallo [a, b] utilizzando il metodo delle differenze 
 % finite UPWIND per il termine del primo ordine.
 % Il modello matematico generale risolto è:
-%       -alfa(x)*u''(x) + beta(x)*u'(x) + gamma(x)*u(x) = f(x)
+%       -alpha(x)*u''(x) + beta(x)*u'(x) + gamma(x)*u(x) = f(x)
 %
 % INPUT:
 %   a, b     : Scalari. Estremi dell'intervallo di integrazione [a, b].
 %   h        : Scalare. Passo di discretizzazione spaziale (ampiezza della griglia).
-%   alfa_fun : Function handle del coefficiente della derivata seconda, alfa(x).
+%   alpha_fun: Function handle del coefficiente della derivata seconda, alpha(x).
 %   beta_fun : Function handle del coefficiente della derivata prima, beta(x).
 %   gamma_fun: Function handle del coefficiente del termine noto lineare, gamma(x).
 %   f_fun    : Function handle del termine sorgente/noto, f(x).
@@ -41,15 +41,15 @@ function [u, x] = risolvi_bvp_upwind(a, b, h, alfa_fun, beta_fun, gamma_fun, f_f
         xi = x(i);
         
         % Valutazione delle funzioni nel nodo corrente x_i
-        alfa  = alfa_fun(xi);
+        alpha  = alpha_fun(xi);
         beta  = beta_fun(xi);
         gamma = gamma_fun(xi);
         f     = f_fun(xi);
         
-        % Contributo base della derivata seconda (-alfa * u'') e del termine reattivo (gamma * u)
-        diff_centro = 2*alfa/h^2 + gamma;
-        diff_sx     = -alfa/h^2;
-        diff_dx     = -alfa/h^2;
+        % Contributo base della derivata seconda (-alpha * u'') e del termine reattivo (gamma * u)
+        diff_centro = 2*alpha/h^2 + gamma;
+        diff_sx     = -alpha/h^2;
+        diff_dx     = -alpha/h^2;
         
         % Modifica Upwind in base al segno di beta(x)
         if beta >= 0

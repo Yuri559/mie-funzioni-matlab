@@ -1,4 +1,4 @@
-function [u, x] = risolvi_bvp(a, b, h, alfa_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
+function [u, x] = risolvi_bvp_my(a, b, h, alfa_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
 %
 %   [u, x] = risolvi_bvp(a, b, h, alfa_fun, beta_fun, gamma_fun, f_fun, tipo_sx, val_sx, tipo_dx, val_dx)
 %
