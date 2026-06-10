@@ -1,8 +1,7 @@
 function [u, x, t] = EqCalore_DiffFin_Theta(mu, f, a, b, us, ud, g0, ...
 	                                        T, h, delta_t, theta)
 %                                        
-% [u, x, t] = EqCalore_DiffFin_Theta(f, a, b, us, ud, g0,
-%	                                 T, h, delta_t, theta)
+% [u, x, t] = EqCalore_DiffFin_Theta(mu, f, a, b, us, ud, g0, T, h, delta_t, theta)
 % 
 % Soluzione numerica del seguente problema per l'equazione del calore:
 %   du/dt - mu d2u/dx2 = f       x in (a, b), t in (0, T]
