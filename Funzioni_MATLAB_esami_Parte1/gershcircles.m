@@ -1,4 +1,4 @@
-function gershcircles(A)
+function [radiic] = gershcircles(A)
 % 
 % gershcircles(A)
 %
